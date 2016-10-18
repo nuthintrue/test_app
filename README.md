@@ -1,4 +1,5 @@
-# README
+# Test App
+[![CircleCI](https://circleci.com/gh/nuthintrue/test_app/tree/master.svg?style=svg)](https://circleci.com/gh/nuthintrue/test_app/tree/master)
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
