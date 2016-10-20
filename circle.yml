@@ -1,0 +1,20 @@
+machine:
+  ruby:
+    version: 2.3.1
+  services:
+    - docker
+
+
+dependencies:
+  pre:
+    - gem install bundler -v 1.12.5
+
+deployment:
+  staging:
+    branch: [master]
+    commands:
+      - docker build -t 405986812585.dkr.ecr.us-west-2.amazonaws.com/test_app:$CIRCLE_BUILD_NUM
+      - eval `aws ecr get-login --region us-west-2`
+      - docker push 405986812585.dkr.ecr.us-west-2.amazonaws.com/test_app:$CIRCLE_BUILD_NUM
+
+
