@@ -11,10 +11,11 @@ dependencies:
 
 deployment:
   staging:
-    branch: [master]
+    branch: [master, docker]
     commands:
       - docker build -t 405986812585.dkr.ecr.us-west-2.amazonaws.com/test_app:$CIRCLE_BUILD_NUM .
       - eval `aws ecr get-login --region us-west-2`
       - docker push 405986812585.dkr.ecr.us-west-2.amazonaws.com/test_app:$CIRCLE_BUILD_NUM
+
 
 
